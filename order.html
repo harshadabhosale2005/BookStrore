@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Book Order </title>
+  <link rel="stylesheet" href="order.css" />
+</head>
+<body>
+ 
+  <div class="container">
+    <h1>Book Order Form</h1>
+    <form id="orderForm">
+      <label for="name">Your Name:</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="book">Select Book:</label>
+      <select id="book" name="book" required>
+        <option value="">-- Choose a Book --</option>
+        <option value="1984">NCERT</option>
+        <option value="hobbit">Super Simple</option>
+        <option value="mockingbird">NEET UG</option>
+        <option value="mockingbird">Objective</option>
+         <option value="mockingbird">Foundation Course</option>
+         <option value="mockingbird">Indea & World</option>
+         <option value="mockingbird">Prisoners</option>
+         <option value="mockingbird">New Geography</option>
+         <option value="mockingbird">Pictorial</option>
+         <option value="mockingbird">Elementary</option>
+      </select>
+
+      <label for="quantity">Quantity:</label>
+      <input type="number" id="quantity" name="quantity" min="1" value="1" required />
+
+      <button type="submit">Place Order</button>
+    </form>
+    <div id="confirmation"></div>
+  </div>
+
+  <script>
+    document.getElementById('orderForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const name = document.getElementById('name').value;
+      const book = document.getElementById('book').value;
+      const quantity = document.getElementById('quantity').value;
+
+      if (book) {
+        document.getElementById('confirmation').innerText = 
+          `Thank you,For ordering .`;
+      }
+    });
+  </script>
+</body>
+</html>
