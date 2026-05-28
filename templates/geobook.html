@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <link rel="stylesheet" href="{{ url_for('static', filename='css/geobook.css') }}">
+</head>
+<body>
+    
+
+<div id="books">
+    <h1><span>Geography Books</span></h1>
+    <h5>Choose any book </h5>
+
+    <div class="books_box">
+
+        <div class="books_card">
+            <div class="books_image">
+                  <img src="{{ url_for('static', filename='img/geo 1.webp') }}">
+            </div>
+            <div class="books_info">
+                <h2>India</h2>
+              <p><center>Rs.300</center></p> 
+               <a href="/order?book=India&price=300"class="books_btn">Buy Now</a>
+            </div>
+        </div>
+
+        <div class="books_card">
+            <div class="books_image">
+                <img src="{{ url_for('static', filename='img/geo 2.webp') }}">
+            </div>
+            <div class="books_info">
+                <h2>Indea & World</h2>
+                <p><center>Rs.190</center></p> 
+                
+                <a href="/order?book=India&price=190"class="books_btn">Buy Now</a>
+            </div>
+        </div>
+
+        <div class="books_card">
+
+            <div class="books_image">
+                <img src="{{ url_for('static', filename='img/geo 3.webp') }}">
+            </div>
+            <div class="books_info">
+                <h2>Prisoners</h2>
+                <p><center>Rs.200</center></p> 
+                
+           <a href="/order?book=India&price=200"class="books_btn">Buy Now</a>
+            </div>
+        </div>
+
+        <div class="books_card">
+            <div class="books_image">
+                <img src="{{ url_for('static', filename='img/geo 4.webp') }}">
+            </div>
+            <div class="books_info">
+                <h2> Elementary</h2>
+                <p><center>Rs.250</center></p> 
+                
+                <a href="/order?book=India&price=250"class="books_btn">Buy Now</a>
+            </div>
+        </div>
+
+        <div class="books_card">
+            <div class="books_image">
+                <img src="{{ url_for('static', filename='img/geo 5.jpg') }}">
+            </div>
+            <div class="books_info">
+                <h2>Pictorial  </h2>
+                <p><center>Rs.390</center></p> 
+                
+                <a href="/order?book=India&price=390"class="books_btn">Buy Now</a>
+            </div>
+        </div>
+
+        <div class="books_card">
+            <div class="books_image">
+                <img src="{{ url_for('static', filename='img/geo 6.jpg') }}">
+            </div>
+            <div class="books_info">
+                <h2>New Geography</h2>
+                <p><center>Rs.490</center></p> 
+                
+                <a href="/order?book=India&price=490"class="books_btn">Buy Now</a>
+                
+            </div>
+        </div>
+        
+    </div>
+</div>
+    </div>
+</div>
+</body>
+</html>

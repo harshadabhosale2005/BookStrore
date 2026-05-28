@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout Page</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/order.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Shipping Address -->
+
+    <div class="left">
+
+        <h2>Shipping Address</h2>
+
+        <form action="/place_order" method="POST">
+
+          <input type="hidden"
+       name="book"
+       value="{{ book }}">
+
+<input type="hidden"
+       name="price"
+       value="{{ price }}">
+
+            <input type="text"
+                   name="fullname"
+                   placeholder="Full Name"
+                   required>
+
+            <input type="text"
+                   name="mobile"
+                   placeholder="Mobile Number"
+                   required>
+
+            <input type="text"
+                   name="pincode"
+                   placeholder="Pin Code"
+                   required>
+
+            <textarea name="address"
+                      placeholder="Flat, House No, Building, Street"
+                      required></textarea>
+
+           
+
+            <input type="text"
+                   name="city"
+                   placeholder="City"
+                   required>
+
+            <input type="text"
+                   name="state"
+                   placeholder="State"
+                   required>
+
+            <!-- Payment -->
+
+      
+
+    <!-- ONLINE -->
+
+    <h2>Payment Options</h2>
+
+<div class="payment">
+
+    <label class="pay-option">
+
+        <input type="radio"
+               name="payment"
+               value="cash"
+               required>
+
+        Cash On Delivery
+
+    </label>
+
+    <label class="pay-option">
+
+        <input type="radio"
+               name="payment"
+               value="Online"
+               id="onlinePayment">
+
+        Online Payment
+
+    </label>
+
+</div>
+
+<!-- Scanner -->
+
+<!-- Scanner -->
+
+<div id="scannerBox"
+     style="display:none; margin-top:20px;">
+
+    <img src="{{ url_for('static',
+             filename='img/scanner.png') }}"
+
+         width="220">
+
+</div>
+
+<button type="submit">
+    Confirm Order
+</button>
+        </form>
+
+    </div>
+
+    <!-- Order Summary -->
+
+    <div class="right">
+
+        <h2>Order Summary</h2>
+
+        <div class="summary-box">
+
+           <p>{{ book }} × 1</p>
+
+<p>Price : ₹{{ price }}</p>
+
+<hr>
+
+<p>Total Item Price : ₹{{ price }}</p>
+
+<p>Delivery Charges : FREE</p>
+
+
+<hr>
+
+<h3>Grand Total : ₹{{ price }}</h3>
+
+        </div>
+
+    </div>
+
+</div>
+   <script>
+
+let onlinePayment =
+    document.getElementById("onlinePayment");
+
+let scannerBox =
+    document.getElementById("scannerBox");
+
+onlinePayment.addEventListener("click", function(){
+
+    scannerBox.style.display = "block";
+
+});
+
+</script>
+</body>
+</html>
